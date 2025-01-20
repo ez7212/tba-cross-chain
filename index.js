@@ -55,13 +55,13 @@ async function prepareCrossChainTransaction(tokenboundClient, claimData, tbaAddr
     // Get the execution details
     const executionDetails = await tokenboundClient.prepareExecution({
         account: tbaAddress,
-        to: "0x2ec90ef34e312a855becf74762d198d8369eece1", // EigenLayer claim contract
+        to: "0x2ec90ef34e312a855becf74762d198d8369eece1", // contract to call on eth
         value: "0",
         data: encodedClaimFunction,
-        chainId: 1
+        chainId: 1 // cross-chain tx to eth
     });
 
-    console.log(executionDetails);
+    console.log("Execution details:", executionDetails);
 }
 
 
